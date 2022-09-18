@@ -15,12 +15,12 @@ fetch("https://jsonplaceholder.typicode.com/todos")
   .then(response => response.json())
   .then(json => {
 
-     const completed2 = json.reduce((accumulator,todo) =>{ 
+     const completed2 = json.reduce((total,todo) =>{ 
         todo.completed
         // using ? : conditional operator, shorthand for if-else statement.
-        ? accumulator
-        : accumulator.push({userId: todo.userId, title: todo.title})
-        return accumulator;
+        ? total
+        : total.push({userId: todo.userId, title: todo.title})
+        return total;
         
      },[]);
      console.log(completed2)
